@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  demo-service:
+    build: .
+    ports:
+      - "8082:8082"
+    environment:
+      - spring.data.mongodb.host=mongodb
+    depends_on:
+      - mongodb

@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   mongodb:
+    platform: linux/amd64
     image: mongo:latest
     ports:
       - "27017:27017"
